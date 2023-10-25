@@ -1,7 +1,11 @@
-export default function Hero() {
+import React from "react";
+import LottieAnimation from "./VisualizerAnimation";
+import animationData from "../../public/visualizer.json";
+
+const Hero: React.FC = () => {
   return (
-    <div className="hero min-h-screen flex items-center">
-      <div className="hero-content pl-80">
+    <div className="hero min-h-screen flex items-center justify-between">
+      <div className="hero-content pl-40">
         <div className="max-w-md">
           <h1 className="text-8xl text-slate-50 font-bold animate-fade-in">
             unwrapped
@@ -14,6 +18,11 @@ export default function Hero() {
           </button>
         </div>
       </div>
+      <div className="pr-40">
+        <LottieAnimation animationData={animationData} />
+      </div>
     </div>
   );
-}
+};
+
+export default Hero;
